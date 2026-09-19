@@ -1,0 +1,92 @@
+site_name: OpenUSD 工业管线避坑手册 (Survival Guide)
+site_description: 影视视效与实时引擎跨 DCC (Maya / Katana / Houdini Solaris / Unreal) OpenUSD 工业生产实战避坑指南
+site_author: 瑞安 (Ryan)
+site_url: https://usd.ryananimation.top/
+repo_name: RyanAnimation/openusd-production-tools
+repo_url: https://github.com/RyanAnimation/openusd-production-tools
+copyright: Copyright &copy; 2026 瑞安 (Ryan) · CC BY-SA 4.0
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+
+extra_css:
+  - stylesheets/mobile.css
+
+extra:
+  social:
+    - icon: fontawesome/solid/house
+      link: https://ryananimation.top/
+      name: 瑞安个人主页 (Ryan Animation)
+    - icon: fontawesome/brands/github
+      link: https://github.com/RyanAnimation/openusd-production-tools
+      name: GitHub 开源工具库
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/2099307779
+      name: B站 官方教程
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@RyanXin-CG
+      name: YouTube 频道
+
+nav:
+  - 首页: index.md
+  - 工业管线避坑指南:
+    - 01. LIVERPS 组合弧与 Over 覆写陷阱: pitfalls/01_liverps_composition_arcs.md
+    - 02. SdfPath 路径与 Dangling Over 清洗: pitfalls/02_dangling_over_cleanup.md
+    - 03. Maya USD 动画导出与变换继承: pitfalls/03_maya_usd_animation_transform.md
+    - 04. Maya LookdevX 与 MaterialX 互通: pitfalls/04_maya_lookdevx_materialx.md
+    - 05. Katana USD 工作流与毛发 (XGen) 限制: pitfalls/05_katana_usd_xgen_hair.md
+    - 06. Solaris Component Builder 规范封装: pitfalls/06_solaris_component_builder.md
+    - 07. Solaris Payload 延迟流式加载: pitfalls/07_solaris_payload_delayed_loading.md
+    - 08. MaterialX 与 Unreal 5.5 Substrate 映射: pitfalls/08_materialx_unreal_substrate.md
+    - 09. 统一烘焙 MikkTSpace 切线与 LOD: pitfalls/09_unified_baking_mikktspace_lod.md
+    - 10. Asset Resolver 2.0 与 Context Pinning: pitfalls/10_asset_resolver_context_pinning.md
+    - 11. Python USD API 核心算子与批量巡检: pitfalls/11_python_usd_api_patterns.md
+    - 12. 跨 DCC Stage 组装根锚定与相对路径: pitfalls/12_stage_assembly_relative_paths.md
+    - 13. Purpose 分流与视口减负规约: pitfalls/13_purpose_token_viewport_culling.md
+    - 14. Kind 分类体系与装配规范: pitfalls/14_kind_hierarchy_assembly.md
+    - 15. USD 变体集 (VariantSet) 避坑: pitfalls/15_variantset_switching_traps.md
+  - 生产级开源工具:
+    - 工具链概览: tools/index.md
+  - 专家智库与顾问咨询: consulting.md
