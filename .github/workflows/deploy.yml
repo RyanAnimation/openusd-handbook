@@ -22,5 +22,6 @@ jobs:
           pip install mkdocs-material pymdown-extensions
       - name: Build and Deploy
         run: |
+          mkdocs build
           cp CNAME site/CNAME
           mkdocs gh-deploy --force
