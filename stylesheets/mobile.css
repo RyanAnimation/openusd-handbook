@@ -1,0 +1,46 @@
+/* mobile & small-screen tuning v3 */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* ---------- tablets & narrow desktop ---------- */
+@media screen and (max-width: 76.1875em) {
+  .md-typeset { font-size: .9rem; }
+  .md-typeset code { font-size: .82rem; }
+  .md-typeset pre { font-size: .8rem; }
+  .md-typeset .admonition, .md-typeset details { font-size: .85rem; }
+}
+
+/* ---------- phones ---------- */
+@media screen and (max-width: 45em) {
+  .md-content pre, .md-content code {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+  }
+  .md-typeset { font-size: 1.05rem !important; line-height: 1.8; }
+  .md-typeset p { margin: 0 0 1.1em; }
+  .md-typeset li { margin-top: .25em; }
+  .md-typeset code { font-size: .92rem; }
+  .md-typeset pre { font-size: .9rem; }
+  .md-typeset .admonition, .md-typeset details { font-size: .98rem; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.35rem !important; }
+  h3 { font-size: 1.15rem !important; }
+  .md-content__inner { margin: .8rem .7rem 1.4rem; }
+  .md-header__source { display: none; }
+  .md-footer-meta__inner { padding: .4rem .6rem; }
+  .md-search__input { font-size: 1rem; }
+  /* table font: material ships .64rem for .md-typeset table:not(pre) — override */
+  .md-typeset table:not(pre) { font-size: .95rem !important; }
+  .md-typeset table:not(pre) th,
+  .md-typeset table:not(pre) td {
+    padding: .5em .55em !important;
+    vertical-align: top;
+  }
+  /* 4-col squeeze: give the narrow "编号" column minimal width */
+  .md-typeset table:not(pre) td:first-child { white-space: nowrap; }
+  blockquote { font-size: .98rem; }
+}
+
+/* diagrams & inline svg scale to container */
+.md-content__inner svg { max-width: 100%; height: auto; }
+/* tables scroll horizontally rather than crush columns */
+.md-content table { max-width: 100%; }
