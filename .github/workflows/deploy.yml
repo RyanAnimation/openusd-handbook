@@ -22,6 +22,11 @@ jobs:
           pip install mkdocs-material pymdown-extensions
       - name: Build and Deploy
         run: |
-          mkdocs build
-          cp CNAME site/CNAME
           mkdocs gh-deploy --force
+      - name: Ensure CNAME on gh-pages
+        run: |
+          rm -rf /tmp/ghp && git clone -q --depth 1 -b gh-pages "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" /tmp/ghp
+          cd /tmp/ghp
+          if [ ! -f CNAME ]; then cp "$GITHUB_WORKSPACE/CNAME" .; git add CNAME; git -c user.name=deploy -c user.email=deploy@bot commit -m "add CNAME"; git push -q origin gh-pages; fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
